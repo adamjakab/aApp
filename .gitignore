@@ -1,0 +1,7 @@
+#IGNORE
+.DS_Store
+.directory
+.settings
+/bin/
+/release/
+/_devel/

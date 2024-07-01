@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run (Select Device)",
+      "type": "monkeyc",
+      "request": "launch",
+      "device": "${command:GetTargetDevice}"
+    },
+    {
+      "name": "Run (fr235)",
+      "type": "monkeyc",
+      "request": "launch",
+      "device": "fr235"
+    }
+  ]
+}
