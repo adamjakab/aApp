@@ -57,7 +57,7 @@ jobs:
         with:
           operation: PACKAGE
           certificate: ${{ secrets.CONNECTIQ_DEVELOPER_KEY_BASE64}}
-          package_name: iHIIT_${{ github.ref_name }}.iq
+          package_name: aApp_${{ github.ref_name }}.iq
       - name: Check Package Path
         run: |
           echo "Relative Package Path: '${{ steps.package_app.outputs.package_path }}'"
