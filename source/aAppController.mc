@@ -5,8 +5,11 @@ using Toybox.Timer as Timer;
 import Toybox.Lang;
 
 class aAppController {
-  var view_index as Number;
-  var view_count as Number;
+  private var view_index as Number = 0;
+  private var view_count as Number = 0;
+
+  public var omniMenuSelectedIndex as Number = 0;
+  public var omniMenuChoices as Dictionary = {};
 
   // Initialize the controller
   public function initialize() {
@@ -21,7 +24,6 @@ class aAppController {
     return [view, new TestModeDelegate()];
   }
 
-  (:debug)
   private function getViewsToTest() as Array {
     // OmniView choices
     var choices =
@@ -34,7 +36,6 @@ class aAppController {
     return [new TestModeView(), new OmniMenuView(choices, 0, "What's it gonna be?")];
   }
 
-  (:debug)
   public function testModeNextScreen() as Void {
     Sys.println("TESTMODE: next");
     var max = getViewsToTest().size();
@@ -45,7 +46,6 @@ class aAppController {
     testModeSetView();
   }
 
-  (:debug)
   public function testModePreviousScreen() as Void {
     Sys.println("TESTMODE: prev");
     var max = getViewsToTest().size();
@@ -56,7 +56,6 @@ class aAppController {
     testModeSetView();
   }
 
-  (:debug)
   public function testModeSetView() {
     Sys.println("TESTMODE: setting screen: " + view_index);
 
