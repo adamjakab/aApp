@@ -27,7 +27,8 @@ class TestModeDelegate extends Ui.BehaviorDelegate {
   }
 
   public function onBack() {
-    Sys.println("Test mode: Not exiting!");
+    // Sys.println("Test mode: Not exiting!");
+    ctrl.testModeExit();
     return true;
   }
 

@@ -56,6 +56,10 @@ class aAppController {
     testModeSetView();
   }
 
+  public function testModeExit() as Void {
+    Ui.popView(Ui.SLIDE_DOWN);
+  }
+
   public function testModeSetView() {
     Sys.println("TESTMODE: setting screen: " + view_index);
 

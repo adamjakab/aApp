@@ -1,5 +1,5 @@
+import Toybox.Lang;
 using Toybox.Application as App;
-using Toybox.Lang as Lang;
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 using Toybox.Graphics as Gfx;
@@ -9,6 +9,8 @@ class TestModeView extends Ui.View {
 
   // Strings
   private var str_testing;
+
+  private var optColor as Number = 0xffffff;
 
   public function initialize() {
     View.initialize();
@@ -54,6 +56,21 @@ class TestModeView extends Ui.View {
     txt = "" + width + "x" + height;
     dc.setColor(Gfx.COLOR_YELLOW, Gfx.COLOR_TRANSPARENT);
     dc.drawText(width / 2, 50, Gfx.FONT_SYSTEM_XTINY, txt, Gfx.TEXT_JUSTIFY_CENTER);
+
+    // COLOR TEST - W
+    optColor = PropertyHelper.getProperty("app_color_countdown_work", 0xffffff);
+    dc.setColor(optColor, Gfx.COLOR_TRANSPARENT);
+    dc.drawText(30, 90, Gfx.FONT_SYSTEM_LARGE, "W", Gfx.TEXT_JUSTIFY_CENTER);
+
+    // COLOR TEST - R
+    optColor = PropertyHelper.getProperty("app_color_countdown_rest", 0xffffff);
+    dc.setColor(optColor, Gfx.COLOR_TRANSPARENT);
+    dc.drawText(60, 90, Gfx.FONT_SYSTEM_LARGE, "R", Gfx.TEXT_JUSTIFY_CENTER);
+
+    // COLOR TEST - P
+    optColor = PropertyHelper.getProperty("app_color_countdown_pause", 0xffffff);
+    dc.setColor(optColor, Gfx.COLOR_TRANSPARENT);
+    dc.drawText(90, 90, Gfx.FONT_SYSTEM_LARGE, "P", Gfx.TEXT_JUSTIFY_CENTER);
 
     AppHelper.drawScreenGuides(dc);
   }
