@@ -2,7 +2,7 @@ using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 using Toybox.Application as App;
 
-class TestModeDelegate extends Ui.BehaviorDelegate {
+class RecordActivityDelegate extends Ui.BehaviorDelegate {
   private var ctrl;
 
   public function initialize() {
