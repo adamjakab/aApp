@@ -8,6 +8,8 @@ class aAppController {
   public var omniMenuSelectedIndex as Number = 0;
   public var omniMenuChoices as Dictionary = {};
 
+  private var workout as Workout? = null;
+
   // Initialize the controller
   public function initialize() {
     //
@@ -34,6 +36,15 @@ class aAppController {
 
   public function OmniMenuOpenRecordActivity() as Void {
     Ui.pushView(new RecordActivityView(), new RecordActivityDelegate(), Ui.SLIDE_RIGHT);
+  }
+
+  public function getNewWorkout() as Workout {
+    if (workout instanceof Workout) {
+      return workout;
+    } else {
+      workout = new Workout();
+      return workout;
+    }
   }
 
   // ===================================================================================================TEST MODE

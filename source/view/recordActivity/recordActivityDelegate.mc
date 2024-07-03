@@ -4,6 +4,7 @@ using Toybox.Application as App;
 
 class RecordActivityDelegate extends Ui.BehaviorDelegate {
   private var ctrl;
+  private var workout as Workout? = null;
 
   public function initialize() {
     ctrl = App.getApp().getController();
@@ -22,8 +23,12 @@ class RecordActivityDelegate extends Ui.BehaviorDelegate {
     return true;
   }
 
+  public function getNewWorkout() as Workout {}
+
   public function onSelect() {
     Ui.requestUpdate();
+    workout = ctrl.getNewWorkout();
+    workout.startRecording();
     return true;
   }
 
