@@ -6,6 +6,7 @@ using Toybox.Graphics as Gfx;
 
 class RecordActivityView extends Ui.View {
   private var app;
+  private var ctrl as aAppController;
 
   // Strings
   private var str_testing;
@@ -13,6 +14,7 @@ class RecordActivityView extends Ui.View {
   public function initialize() {
     View.initialize();
     app = App.getApp();
+    ctrl = App.getApp().getController();
   }
 
   // Set up the layout
@@ -26,6 +28,8 @@ class RecordActivityView extends Ui.View {
     var width = dc.getWidth();
     var height = dc.getHeight();
 
+    Sys.println("update...");
+
     //** clear screen
     dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_BLACK);
     dc.clear();
@@ -34,6 +38,12 @@ class RecordActivityView extends Ui.View {
     txt = "Activity";
     dc.setColor(Gfx.COLOR_ORANGE, Gfx.COLOR_TRANSPARENT);
     dc.drawText(width / 2, 5, Gfx.FONT_SYSTEM_LARGE, txt, Gfx.TEXT_JUSTIFY_CENTER);
+
+    // Elapsed WO seconds
+    var workout = ctrl.getNewWorkout();
+    txt = workout.getStatus();
+    dc.setColor(Gfx.COLOR_PINK, Gfx.COLOR_TRANSPARENT);
+    dc.drawText(width / 2, 70, Gfx.FONT_NUMBER_THAI_HOT, txt, Gfx.TEXT_JUSTIFY_CENTER);
 
     AppHelper.drawScreenGuides(dc);
   }
