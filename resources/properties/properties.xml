@@ -8,7 +8,7 @@
 		<property id="app_color_countdown_rest" type="number">0x00FF00</property>
 		<property id="app_color_countdown_pause" type="number">0xFFAA00</property>
 
-		<property id="workout_sport" type="number">0</property>
+		<property id="workout_sport" type="number">4</property>
 		<property id="workout_sub_sport" type="number">0</property>
 
 		<!-- WORKOUT #1 -->

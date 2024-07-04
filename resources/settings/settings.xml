@@ -63,24 +63,22 @@
 			</settingConfig>
 		</setting>
 
-		<setting propertyKey="@Properties.workout_sport" title="@Strings.workout_sport">
+		<!-- <setting propertyKey="@Properties.workout_sport" title="@Strings.workout_sport">
 			<settingConfig type="list">
 				<listEntry value="0">Generic</listEntry>
 				<listEntry value="4">Fitness Equipment</listEntry>
 				<listEntry value="10">Training</listEntry>
-				<listEntry value="62">HIIT</listEntry>
-				<listEntry value="67">Meditation</listEntry>
 			</settingConfig>
-		</setting>
+		</setting> -->
 
-		<setting propertyKey="@Properties.workout_sub_sport" title="@Strings.workout_sub_sport">
+		<setting propertyKey="@Properties.workout_sub_sport" title="@Strings.workout_activity_type">
 			<settingConfig type="list">
 				<listEntry value="0">Generic</listEntry>
+				<listEntry value="23">Exercise</listEntry>
 				<listEntry value="19">Flexibility Training</listEntry>
 				<listEntry value="20">Strength Training</listEntry>
-				<listEntry value="23">Exercise</listEntry>
 				<listEntry value="26">Cardio Training</listEntry>
-				<listEntry value="44">Pilates</listEntry>
+				<listEntry value="21">Warm-up</listEntry>
 			</settingConfig>
 		</setting>
 
