@@ -14,6 +14,8 @@
 		<string id="color_countdown_rest">Rest color</string>
 		<string id="color_countdown_pause">Pause color</string>
 
+		<string id="workout_sport">Sport Type</string>
+		<string id="workout_sub_sport">Sport Sub-type</string>
 
 		<!-- Settings: Workout Main -->
 		<string id="workout_title">Workout title</string>

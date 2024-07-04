@@ -8,6 +8,9 @@
 		<property id="app_color_countdown_rest" type="number">0x00FF00</property>
 		<property id="app_color_countdown_pause" type="number">0xFFAA00</property>
 
+		<property id="workout_sport" type="number">0</property>
+		<property id="workout_sub_sport" type="number">0</property>
+
 		<!-- WORKOUT #1 -->
 		<property id="w1_divider" type="string">|=============: DIVIDER #1 :=============|</property>
 		<property id="w1_title" type="string">Workout 1</property>

@@ -27,10 +27,13 @@ class Workout {
       Sys.println("Workout is already recording...");
     } else {
       // Start session
+      var workout_sport = PropertyHelper.getProperty("workout_sport", 0);
+      var workout_sub_sport = PropertyHelper.getProperty("workout_sub_sport", 0);
+      Sys.println("Setting activity type to: " + workout_sport + "/" + workout_sub_sport);
       session = ActivityRecording.createSession({
         :name => "TEST SESSION",
-        :sport => Activity.SPORT_GENERIC,
-        :subSport => Activity.SUB_SPORT_GENERIC,
+        :sport => workout_sport,
+        :subSport => workout_sub_sport,
       });
       session.start();
 
