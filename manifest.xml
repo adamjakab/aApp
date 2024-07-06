@@ -2,6 +2,8 @@
     <iq:application version="0.0.4" entry="aApp" id="5fa082b017864e7fa1f3ec51bb340fff" launcherIcon="@Drawables.LauncherIcon" minSdkVersion="1.4.0" name="@Strings.app_name" type="watch-app">
         <iq:products>
             <iq:product id="fr235"/>
+            <iq:product id="vivoactive"/>
+            <iq:product id="vivoactive4"/>
         </iq:products>
         <iq:permissions>
             <iq:uses-permission id="Fit"/>

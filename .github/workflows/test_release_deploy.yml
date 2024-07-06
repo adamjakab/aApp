@@ -10,39 +10,40 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 3
-      matrix:
-        # device:
-        #   [
-        #     approachs60,
-        #     approachs62,
-        #     d2bravo,
-        #     d2bravo_titanium,
-        #     d2charlie,
-        #     descentmk1,
-        #     fenix3,
-        #     fenix3_hr,
-        #     fr230,
-        #     fr235,
-        #     fr630,
-        #     fr645m,
-        #     fr735xt,
-        #     fr920xt,
-        #     vivoactive,
-        #     vivoactive3d,
-        #     vivoactive4,
-        #     vivoactive_hr,
-        #   ]
-        device: [fr235]
+    # strategy:
+    #   max-parallel: 3
+    #   matrix:
+    # device:
+    #   [
+    #     approachs60,
+    #     approachs62,
+    #     d2bravo,
+    #     d2bravo_titanium,
+    #     d2charlie,
+    #     descentmk1,
+    #     fenix3,
+    #     fenix3_hr,
+    #     fr230,
+    #     fr235,
+    #     fr630,
+    #     fr645m,
+    #     fr735xt,
+    #     fr920xt,
+    #     vivoactive,
+    #     vivoactive3d,
+    #     vivoactive4,
+    #     vivoactive_hr,
+    #   ]
+    # device: [fr235]
     steps:
       - uses: actions/checkout@v4
-      - name: Test on device ${{ matrix.device }}
+      - name: Test on all supported devices
         id: run_tests
         uses: adamjakab/action-connectiq-builder@v1
         with:
+          verbose: 1
           operation: TEST
-          device: ${{ matrix.device }}
+          devices: fr235,vivoactive,vivoactive4
           certificate: ${{ secrets.CONNECTIQ_DEVELOPER_KEY_BASE64}}
   release:
     needs: test
@@ -55,6 +56,7 @@ jobs:
         id: package_app
         uses: adamjakab/action-connectiq-builder@v1
         with:
+          verbose: 1
           operation: PACKAGE
           certificate: ${{ secrets.CONNECTIQ_DEVELOPER_KEY_BASE64}}
           package_name: aApp_${{ github.ref_name }}.iq
